@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ReaderDiary.pages"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800" Background="White"
+      d:DesignHeight="900" d:DesignWidth="900" Background="White"
       Title="Login">
     <Grid>
         <Border Width="400" Height="550" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2">
