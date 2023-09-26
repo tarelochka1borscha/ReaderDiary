@@ -1,4 +1,5 @@
-﻿using ReaderDiary.pages;
+﻿using ReaderDiary.classes;
+using ReaderDiary.pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace ReaderDiary
         public MainWindow()
         {
             InitializeComponent();
+            Base.RDBase = new ReaderDiaryKrupinaEntities();
         }
     }
 }
