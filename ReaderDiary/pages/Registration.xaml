@@ -5,10 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ReaderDiary.pages"
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="900" Background="White"
+      d:DesignHeight="900" d:DesignWidth="900" Background="#fffbf2"
       Title="Registration">
 
     <Grid>
+        <ScrollViewer>
         <Border Width="600" Height="800" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2">
             <StackPanel>
                 <TextBlock Style="{StaticResource TextUsual}" FontWeight="DemiBold" Margin="0,30,0,15" HorizontalAlignment="Center" FontSize="35">РЕГИСТРАЦИЯ</TextBlock>
@@ -34,5 +35,6 @@
                 <Button Click ="ToEnter_Click" Name="ToRegistration" Style="{StaticResource TextButton}" Margin ="30" HorizontalAlignment="Center">Уже есть аккаунт?</Button>
             </StackPanel>
         </Border>
+        </ScrollViewer>
     </Grid>
 </Page>

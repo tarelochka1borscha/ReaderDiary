@@ -37,7 +37,7 @@ namespace ReaderDiary.pages
 
         private void ToEnter_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("pages/Login.xaml", UriKind.Relative));
         }
     }
 }

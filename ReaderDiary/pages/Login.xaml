@@ -5,10 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ReaderDiary.pages"
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="900" Background="White"
+      d:DesignHeight="900" d:DesignWidth="900" Background="#fffbf2"
       Title="Login">
     <Grid>
-        <Border Width="400" Height="550" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2">
+        <ScrollViewer>
+            <Border Width="400" Height="550" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2">
             <StackPanel>
                 <TextBlock Style="{StaticResource TextUsual}" FontWeight="DemiBold" Margin="0,50,0,50" HorizontalAlignment="Center" FontSize="35">АВТОРИЗАЦИЯ</TextBlock>
                 <TextBlock Style="{StaticResource TextUsual}" Margin="20,0,0,0">Логин</TextBlock>
@@ -19,6 +20,6 @@
                 <Button Click="GoToRegistration_Click"  Name="ToRegistration" Style="{StaticResource TextButton}" Margin ="40" HorizontalAlignment="Center">Нажмите для регистрации</Button>
             </StackPanel>
         </Border>
-        
+        </ScrollViewer>
     </Grid>
 </Page>
