@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ReaderDiary.pages"
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="900" Background="#fffbf2"
+      d:DesignHeight="700" d:DesignWidth="900" Background="#fffbf2"
       Title="Login">
     <Grid>
         <ScrollViewer>
@@ -13,9 +13,9 @@
             <StackPanel>
                 <TextBlock Style="{StaticResource TextUsual}" FontWeight="DemiBold" Margin="0,50,0,50" HorizontalAlignment="Center" FontSize="35">АВТОРИЗАЦИЯ</TextBlock>
                 <TextBlock Style="{StaticResource TextUsual}" Margin="20,0,0,0">Логин</TextBlock>
-                <TextBox Style="{StaticResource TextBoxUsial}" MaxLength="25" Margin="20,5,20,0" Height="30"></TextBox>
+                <TextBox x:Name="login" Style="{StaticResource TextBoxUsial}" MaxLength="25" Margin="20,5,20,0" Height="30"></TextBox>
                 <TextBlock Style="{StaticResource TextUsual}" Margin="20,20,0,0">Пароль</TextBlock>
-                <TextBox Style="{StaticResource TextBoxUsial}" MaxLength="50" Margin="20,5,20,0" Height="30"></TextBox>
+                <TextBox x:Name="password" Style="{StaticResource TextBoxUsial}" MaxLength="50" Margin="20,5,20,0" Height="30"></TextBox>
                 <Button Click ="Enter_Click" Name="Enter" Style="{StaticResource ButtonUsial}" Margin="0,50,0,0" Width="300" Height="60">ВОЙТИ</Button>
                 <Button Click="GoToRegistration_Click"  Name="ToRegistration" Style="{StaticResource TextButton}" Margin ="40" HorizontalAlignment="Center">Нажмите для регистрации</Button>
             </StackPanel>
