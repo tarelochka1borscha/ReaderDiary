@@ -19,7 +19,7 @@ namespace ReaderDiary.pages
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            Account user = Base.RDBase.Account.FirstOrDefault(x => x.login.ToString() == login.Text && x.password.ToString() == password.Text);
+            Account user = Base.RDBase.Account.FirstOrDefault(x => x.login == login.Text && x.password == password.Text);
             if (user != null)
             {
                 switch (user.id_role)
