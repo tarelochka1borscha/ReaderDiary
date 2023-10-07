@@ -4,27 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0b70028061044628b91f422deba8dfa1" Name="Diagram1">
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.Account" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.Author" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.BookGenre" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.Country" Width="1.5" PointX="1.5" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.Gender" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.Genre" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.Passport" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.Review" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.UserData" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReaderDiaryKrupinaModel.UserRole" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__Account__id_gend__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__Account__id_role__3C69FB99" ManuallyRouted="false" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__Review__id_user__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__UserData__id_use__5FB337D6" ManuallyRouted="false" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__Author__id_count__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__Passport__id_aut__440B1D61" ManuallyRouted="false" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__BookGenre__id_ge__49C3F6B7" ManuallyRouted="false" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__BookGenre__id_pa__48CFD27E" ManuallyRouted="false" />
-        <AssociationConnector Association="ReaderDiaryKrupinaModel.FK__Review__id_passp__4CA06362" ManuallyRouted="false" />
+      <Diagram DiagramId="703b6c8c0bab4097ba1fb7cbd6328e17" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Account" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Author" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BookGenre" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Country" Width="1.5" PointX="1.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Gender" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Genre" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Passport" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Review" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserData" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserRole" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__Account__id_gend__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Account__id_role__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Review__id_user__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__UserData__id_use__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Author__id_count__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Passport__id_aut__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__BookGenre__id_ge__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__BookGenre__id_pa__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Review__id_passp__60A75C0F" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

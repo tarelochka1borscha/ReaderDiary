@@ -16,8 +16,9 @@
                 <TextBox x:Name="login" Style="{StaticResource TextBoxUsial}" MaxLength="25" Margin="20,5,20,0" Height="30"></TextBox>
                 <TextBlock Style="{StaticResource TextUsual}" Margin="20,20,0,0">Пароль</TextBlock>
                 <TextBox x:Name="password" Style="{StaticResource TextBoxUsial}" MaxLength="50" Margin="20,5,20,0" Height="30"></TextBox>
-                <Button Click ="Enter_Click" Name="Enter" Style="{StaticResource ButtonUsial}" Margin="0,50,0,0" Width="300" Height="60">ВОЙТИ</Button>
-                <Button Click="GoToRegistration_Click"  Name="ToRegistration" Style="{StaticResource TextButton}" Margin ="40" HorizontalAlignment="Center">Нажмите для регистрации</Button>
+                    <TextBlock x:Name="Message" Style="{StaticResource TextUsual}" FontSize="18" Margin="20,5,20,0" Height="70"></TextBlock>
+                    <Button Click ="Enter_Click" Name="Enter" Style="{StaticResource ButtonUsial}" Margin="0,0,0,0" Width="300" Height="60">ВОЙТИ</Button>
+                    <Button Click="GoToRegistration_Click"  Name="ToRegistration" Style="{StaticResource TextButton}" Margin ="40" HorizontalAlignment="Center">Нажмите для регистрации</Button>
             </StackPanel>
         </Border>
         </ScrollViewer>

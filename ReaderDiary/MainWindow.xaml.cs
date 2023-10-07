@@ -25,7 +25,7 @@ namespace ReaderDiary
         public MainWindow()
         {
             InitializeComponent();
-            Base.RDBase = new ReaderDiaryKrupinaEntities();
+            Base.RDBase = new EntitiesRDiary();
         }
     }
 }

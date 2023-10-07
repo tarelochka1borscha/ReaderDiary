@@ -1,5 +1,6 @@
 ﻿using ReaderDiary.classes;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,24 +16,33 @@ namespace ReaderDiary.pages
         public Login()
         {
             InitializeComponent();
+            Base.RDBase = new EntitiesRDiary();
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            Account user = Base.RDBase.Account.FirstOrDefault(x => x.login == login.Text && x.password == password.Text);
+            int pass = password.Text.GetHashCode();
+            Account user = Base.RDBase.Account.FirstOrDefault(x => x.login == login.Text);
             if (user != null)
             {
-                switch (user.id_role)
+                if (user.password == pass)
                 {
-                    case 1:
-                        NavigationService.Navigate(new Uri("pages/AdminMenu.xaml", UriKind.Relative));
-                        break;
+                    switch (user.id_role)
+                    {
+                        case 1:
+                            NavigationService.Navigate(new Uri("pages/AdminMenu.xaml", UriKind.Relative));
+                            break;
                         case 2:
-                        MessageBox.Show("Юзер");
-                        break;
-                    default:
-                        MessageBox.Show("Не найден");
-                        break;
+                            MessageBox.Show("Юзер");
+                            break;
+                        default:
+                            MessageBox.Show("Не найден");
+                            break;
+                    }
+                }
+                else
+                {
+                    Message.Text = "Неверный пароль.";
                 }
             }
         }

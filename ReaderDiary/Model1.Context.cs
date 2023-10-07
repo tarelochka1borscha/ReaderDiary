@@ -13,10 +13,10 @@ namespace ReaderDiary
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ReaderDiaryKrupinaEntities : DbContext
+    public partial class EntitiesRDiary : DbContext
     {
-        public ReaderDiaryKrupinaEntities()
-            : base("name=ReaderDiaryKrupinaEntities")
+        public EntitiesRDiary()
+            : base("name=EntitiesRDiary")
         {
         }
     

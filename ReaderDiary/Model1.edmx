@@ -4,14 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ReaderDiaryKrupinaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="id_user" />
           </Key>
           <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="login" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="int" Nullable="false" />
           <Property Name="id_gender" Type="int" Nullable="false" />
           <Property Name="birthday" Type="date" />
           <Property Name="id_role" Type="int" Nullable="false" />
@@ -129,7 +129,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Author__id_count__412EB0B6">
+        <Association Name="FK__Author__id_count__5CD6CB2B">
           <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
           <End Role="Author" Type="Self.Author" Multiplicity="*" />
           <ReferentialConstraint>
@@ -141,7 +141,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookGenre__id_ge__49C3F6B7">
+        <Association Name="FK__BookGenre__id_ge__5DCAEF64">
           <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
           <End Role="BookGenre" Type="Self.BookGenre" Multiplicity="*" />
           <ReferentialConstraint>
@@ -153,7 +153,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookGenre__id_pa__48CFD27E">
+        <Association Name="FK__BookGenre__id_pa__5EBF139D">
           <End Role="Passport" Type="Self.Passport" Multiplicity="1" />
           <End Role="BookGenre" Type="Self.BookGenre" Multiplicity="*" />
           <ReferentialConstraint>
@@ -165,7 +165,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Passport__id_aut__440B1D61">
+        <Association Name="FK__Passport__id_aut__5FB337D6">
           <End Role="Author" Type="Self.Author" Multiplicity="1" />
           <End Role="Passport" Type="Self.Passport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -177,7 +177,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Review__id_passp__4CA06362">
+        <Association Name="FK__Review__id_passp__60A75C0F">
           <End Role="Passport" Type="Self.Passport" Multiplicity="1" />
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
@@ -201,7 +201,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UserData__id_use__5FB337D6">
+        <Association Name="FK__UserData__id_use__628FA481">
           <End Role="Account" Type="Self.Account" Multiplicity="1" />
           <End Role="UserData" Type="Self.UserData" Multiplicity="*" />
           <ReferentialConstraint>
@@ -213,7 +213,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище ReaderDiaryKrupinaModelContainer">
+        <EntityContainer Name="Хранилище ModelContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookGenre" EntityType="Self.BookGenre" Schema="dbo" store:Type="Tables" />
@@ -233,23 +233,23 @@
             <End Role="UserRole" EntitySet="UserRole" />
             <End Role="Account" EntitySet="Account" />
           </AssociationSet>
-          <AssociationSet Name="FK__Author__id_count__412EB0B6" Association="Self.FK__Author__id_count__412EB0B6">
+          <AssociationSet Name="FK__Author__id_count__5CD6CB2B" Association="Self.FK__Author__id_count__5CD6CB2B">
             <End Role="Country" EntitySet="Country" />
             <End Role="Author" EntitySet="Author" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookGenre__id_ge__49C3F6B7" Association="Self.FK__BookGenre__id_ge__49C3F6B7">
+          <AssociationSet Name="FK__BookGenre__id_ge__5DCAEF64" Association="Self.FK__BookGenre__id_ge__5DCAEF64">
             <End Role="Genre" EntitySet="Genre" />
             <End Role="BookGenre" EntitySet="BookGenre" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookGenre__id_pa__48CFD27E" Association="Self.FK__BookGenre__id_pa__48CFD27E">
+          <AssociationSet Name="FK__BookGenre__id_pa__5EBF139D" Association="Self.FK__BookGenre__id_pa__5EBF139D">
             <End Role="Passport" EntitySet="Passport" />
             <End Role="BookGenre" EntitySet="BookGenre" />
           </AssociationSet>
-          <AssociationSet Name="FK__Passport__id_aut__440B1D61" Association="Self.FK__Passport__id_aut__440B1D61">
+          <AssociationSet Name="FK__Passport__id_aut__5FB337D6" Association="Self.FK__Passport__id_aut__5FB337D6">
             <End Role="Author" EntitySet="Author" />
             <End Role="Passport" EntitySet="Passport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Review__id_passp__4CA06362" Association="Self.FK__Review__id_passp__4CA06362">
+          <AssociationSet Name="FK__Review__id_passp__60A75C0F" Association="Self.FK__Review__id_passp__60A75C0F">
             <End Role="Passport" EntitySet="Passport" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
@@ -257,7 +257,7 @@
             <End Role="Account" EntitySet="Account" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
-          <AssociationSet Name="FK__UserData__id_use__5FB337D6" Association="Self.FK__UserData__id_use__5FB337D6">
+          <AssociationSet Name="FK__UserData__id_use__628FA481" Association="Self.FK__UserData__id_use__628FA481">
             <End Role="Account" EntitySet="Account" />
             <End Role="UserData" EntitySet="UserData" />
           </AssociationSet>
@@ -266,21 +266,21 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ReaderDiaryKrupinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="id_user" />
           </Key>
           <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="login" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="Int32" Nullable="false" />
           <Property Name="id_gender" Type="Int32" Nullable="false" />
           <Property Name="birthday" Type="DateTime" Precision="0" />
           <Property Name="id_role" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Gender" Relationship="Self.FK__Account__id_gend__3B75D760" FromRole="Account" ToRole="Gender" />
           <NavigationProperty Name="UserRole" Relationship="Self.FK__Account__id_role__3C69FB99" FromRole="Account" ToRole="UserRole" />
           <NavigationProperty Name="Review" Relationship="Self.FK__Review__id_user__4D94879B" FromRole="Account" ToRole="Review" />
-          <NavigationProperty Name="UserData" Relationship="Self.FK__UserData__id_use__5FB337D6" FromRole="Account" ToRole="UserData" />
+          <NavigationProperty Name="UserData" Relationship="Self.FK__UserData__id_use__628FA481" FromRole="Account" ToRole="UserData" />
         </EntityType>
         <EntityType Name="Author">
           <Key>
@@ -290,8 +290,8 @@
           <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="surname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="id_country" Type="Int32" />
-          <NavigationProperty Name="Country" Relationship="Self.FK__Author__id_count__412EB0B6" FromRole="Author" ToRole="Country" />
-          <NavigationProperty Name="Passport" Relationship="Self.FK__Passport__id_aut__440B1D61" FromRole="Author" ToRole="Passport" />
+          <NavigationProperty Name="Country" Relationship="Self.FK__Author__id_count__5CD6CB2B" FromRole="Author" ToRole="Country" />
+          <NavigationProperty Name="Passport" Relationship="Self.FK__Passport__id_aut__5FB337D6" FromRole="Author" ToRole="Passport" />
         </EntityType>
         <EntityType Name="BookGenre">
           <Key>
@@ -300,8 +300,8 @@
           <Property Name="id_book_genre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_passport" Type="Int32" Nullable="false" />
           <Property Name="id_genre" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Genre" Relationship="Self.FK__BookGenre__id_ge__49C3F6B7" FromRole="BookGenre" ToRole="Genre" />
-          <NavigationProperty Name="Passport" Relationship="Self.FK__BookGenre__id_pa__48CFD27E" FromRole="BookGenre" ToRole="Passport" />
+          <NavigationProperty Name="Genre" Relationship="Self.FK__BookGenre__id_ge__5DCAEF64" FromRole="BookGenre" ToRole="Genre" />
+          <NavigationProperty Name="Passport" Relationship="Self.FK__BookGenre__id_pa__5EBF139D" FromRole="BookGenre" ToRole="Passport" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -309,7 +309,7 @@
           </Key>
           <Property Name="id_country" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Author" Relationship="Self.FK__Author__id_count__412EB0B6" FromRole="Country" ToRole="Author" />
+          <NavigationProperty Name="Author" Relationship="Self.FK__Author__id_count__5CD6CB2B" FromRole="Country" ToRole="Author" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -325,7 +325,7 @@
           </Key>
           <Property Name="id_genre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="BookGenre" Relationship="Self.FK__BookGenre__id_ge__49C3F6B7" FromRole="Genre" ToRole="BookGenre" />
+          <NavigationProperty Name="BookGenre" Relationship="Self.FK__BookGenre__id_ge__5DCAEF64" FromRole="Genre" ToRole="BookGenre" />
         </EntityType>
         <EntityType Name="Passport">
           <Key>
@@ -337,9 +337,9 @@
           <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="pages" Type="Int32" />
           <Property Name="photo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Author" Relationship="Self.FK__Passport__id_aut__440B1D61" FromRole="Passport" ToRole="Author" />
-          <NavigationProperty Name="BookGenre" Relationship="Self.FK__BookGenre__id_pa__48CFD27E" FromRole="Passport" ToRole="BookGenre" />
-          <NavigationProperty Name="Review" Relationship="Self.FK__Review__id_passp__4CA06362" FromRole="Passport" ToRole="Review" />
+          <NavigationProperty Name="Author" Relationship="Self.FK__Passport__id_aut__5FB337D6" FromRole="Passport" ToRole="Author" />
+          <NavigationProperty Name="BookGenre" Relationship="Self.FK__BookGenre__id_pa__5EBF139D" FromRole="Passport" ToRole="BookGenre" />
+          <NavigationProperty Name="Review" Relationship="Self.FK__Review__id_passp__60A75C0F" FromRole="Passport" ToRole="Review" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -354,7 +354,7 @@
           <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="grade" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK__Review__id_user__4D94879B" FromRole="Review" ToRole="Account" />
-          <NavigationProperty Name="Passport" Relationship="Self.FK__Review__id_passp__4CA06362" FromRole="Review" ToRole="Passport" />
+          <NavigationProperty Name="Passport" Relationship="Self.FK__Review__id_passp__60A75C0F" FromRole="Review" ToRole="Passport" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -375,7 +375,7 @@
           <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="surname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="patronymic" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Account" Relationship="Self.FK__UserData__id_use__5FB337D6" FromRole="UserData" ToRole="Account" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__UserData__id_use__628FA481" FromRole="UserData" ToRole="Account" />
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
@@ -421,7 +421,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UserData__id_use__5FB337D6">
+        <Association Name="FK__UserData__id_use__628FA481">
           <End Role="Account" Type="Self.Account" Multiplicity="1" />
           <End Role="UserData" Type="Self.UserData" Multiplicity="*" />
           <ReferentialConstraint>
@@ -433,7 +433,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Author__id_count__412EB0B6">
+        <Association Name="FK__Author__id_count__5CD6CB2B">
           <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
           <End Role="Author" Type="Self.Author" Multiplicity="*" />
           <ReferentialConstraint>
@@ -445,7 +445,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Passport__id_aut__440B1D61">
+        <Association Name="FK__Passport__id_aut__5FB337D6">
           <End Role="Author" Type="Self.Author" Multiplicity="1" />
           <End Role="Passport" Type="Self.Passport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -457,7 +457,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookGenre__id_ge__49C3F6B7">
+        <Association Name="FK__BookGenre__id_ge__5DCAEF64">
           <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
           <End Role="BookGenre" Type="Self.BookGenre" Multiplicity="*" />
           <ReferentialConstraint>
@@ -469,7 +469,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookGenre__id_pa__48CFD27E">
+        <Association Name="FK__BookGenre__id_pa__5EBF139D">
           <End Role="Passport" Type="Self.Passport" Multiplicity="1" />
           <End Role="BookGenre" Type="Self.BookGenre" Multiplicity="*" />
           <ReferentialConstraint>
@@ -481,7 +481,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Review__id_passp__4CA06362">
+        <Association Name="FK__Review__id_passp__60A75C0F">
           <End Role="Passport" Type="Self.Passport" Multiplicity="1" />
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
@@ -493,7 +493,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ReaderDiaryKrupinaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EntitiesRDiary" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Account" EntityType="Self.Account" />
           <EntitySet Name="Author" EntityType="Self.Author" />
           <EntitySet Name="BookGenre" EntityType="Self.BookGenre" />
@@ -517,27 +517,27 @@
             <End Role="Account" EntitySet="Account" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
-          <AssociationSet Name="FK__UserData__id_use__5FB337D6" Association="Self.FK__UserData__id_use__5FB337D6">
+          <AssociationSet Name="FK__UserData__id_use__628FA481" Association="Self.FK__UserData__id_use__628FA481">
             <End Role="Account" EntitySet="Account" />
             <End Role="UserData" EntitySet="UserData" />
           </AssociationSet>
-          <AssociationSet Name="FK__Author__id_count__412EB0B6" Association="Self.FK__Author__id_count__412EB0B6">
+          <AssociationSet Name="FK__Author__id_count__5CD6CB2B" Association="Self.FK__Author__id_count__5CD6CB2B">
             <End Role="Country" EntitySet="Country" />
             <End Role="Author" EntitySet="Author" />
           </AssociationSet>
-          <AssociationSet Name="FK__Passport__id_aut__440B1D61" Association="Self.FK__Passport__id_aut__440B1D61">
+          <AssociationSet Name="FK__Passport__id_aut__5FB337D6" Association="Self.FK__Passport__id_aut__5FB337D6">
             <End Role="Author" EntitySet="Author" />
             <End Role="Passport" EntitySet="Passport" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookGenre__id_ge__49C3F6B7" Association="Self.FK__BookGenre__id_ge__49C3F6B7">
+          <AssociationSet Name="FK__BookGenre__id_ge__5DCAEF64" Association="Self.FK__BookGenre__id_ge__5DCAEF64">
             <End Role="Genre" EntitySet="Genre" />
             <End Role="BookGenre" EntitySet="BookGenre" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookGenre__id_pa__48CFD27E" Association="Self.FK__BookGenre__id_pa__48CFD27E">
+          <AssociationSet Name="FK__BookGenre__id_pa__5EBF139D" Association="Self.FK__BookGenre__id_pa__5EBF139D">
             <End Role="Passport" EntitySet="Passport" />
             <End Role="BookGenre" EntitySet="BookGenre" />
           </AssociationSet>
-          <AssociationSet Name="FK__Review__id_passp__4CA06362" Association="Self.FK__Review__id_passp__4CA06362">
+          <AssociationSet Name="FK__Review__id_passp__60A75C0F" Association="Self.FK__Review__id_passp__60A75C0F">
             <End Role="Passport" EntitySet="Passport" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
@@ -547,9 +547,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ReaderDiaryKrupinaModelContainer" CdmEntityContainer="ReaderDiaryKrupinaEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="EntitiesRDiary">
           <EntitySetMapping Name="Account">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.Account">
+            <EntityTypeMapping TypeName="Model.Account">
               <MappingFragment StoreEntitySet="Account">
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
                 <ScalarProperty Name="login" ColumnName="login" />
@@ -561,7 +561,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Author">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.Author">
+            <EntityTypeMapping TypeName="Model.Author">
               <MappingFragment StoreEntitySet="Author">
                 <ScalarProperty Name="id_author" ColumnName="id_author" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -571,7 +571,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BookGenre">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.BookGenre">
+            <EntityTypeMapping TypeName="Model.BookGenre">
               <MappingFragment StoreEntitySet="BookGenre">
                 <ScalarProperty Name="id_book_genre" ColumnName="id_book_genre" />
                 <ScalarProperty Name="id_passport" ColumnName="id_passport" />
@@ -580,7 +580,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Country">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.Country">
+            <EntityTypeMapping TypeName="Model.Country">
               <MappingFragment StoreEntitySet="Country">
                 <ScalarProperty Name="id_country" ColumnName="id_country" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -588,7 +588,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Gender">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.Gender">
+            <EntityTypeMapping TypeName="Model.Gender">
               <MappingFragment StoreEntitySet="Gender">
                 <ScalarProperty Name="id_gender" ColumnName="id_gender" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -596,7 +596,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Genre">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.Genre">
+            <EntityTypeMapping TypeName="Model.Genre">
               <MappingFragment StoreEntitySet="Genre">
                 <ScalarProperty Name="id_genre" ColumnName="id_genre" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -604,7 +604,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Passport">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.Passport">
+            <EntityTypeMapping TypeName="Model.Passport">
               <MappingFragment StoreEntitySet="Passport">
                 <ScalarProperty Name="id_passport" ColumnName="id_passport" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -616,7 +616,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Review">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.Review">
+            <EntityTypeMapping TypeName="Model.Review">
               <MappingFragment StoreEntitySet="Review">
                 <ScalarProperty Name="id_review" ColumnName="id_review" />
                 <ScalarProperty Name="id_passport" ColumnName="id_passport" />
@@ -630,7 +630,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -641,7 +641,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserData">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.UserData">
+            <EntityTypeMapping TypeName="Model.UserData">
               <MappingFragment StoreEntitySet="UserData">
                 <ScalarProperty Name="id_userdata" ColumnName="id_userdata" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
@@ -652,7 +652,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserRole">
-            <EntityTypeMapping TypeName="ReaderDiaryKrupinaModel.UserRole">
+            <EntityTypeMapping TypeName="Model.UserRole">
               <MappingFragment StoreEntitySet="UserRole">
                 <ScalarProperty Name="id_role" ColumnName="id_role" />
                 <ScalarProperty Name="title" ColumnName="title" />

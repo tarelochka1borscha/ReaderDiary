@@ -23,7 +23,7 @@ namespace ReaderDiary
     
         public int id_user { get; set; }
         public string login { get; set; }
-        public string password { get; set; }
+        public int password { get; set; }
         public int id_gender { get; set; }
         public Nullable<System.DateTime> birthday { get; set; }
         public int id_role { get; set; }
