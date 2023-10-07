@@ -13,8 +13,11 @@
         <Border Width="600" Height="800" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2">
             <StackPanel>
                 <TextBlock Style="{StaticResource TextUsual}" FontWeight="DemiBold" Margin="0,30,0,15" HorizontalAlignment="Center" FontSize="35">РЕГИСТРАЦИЯ</TextBlock>
-                <TextBlock Style="{StaticResource TextUsual}" Margin="20,0,0,0">Введите имя*</TextBlock>
-                <TextBox x:Name="Name" Style="{StaticResource TextBoxUsial}" MaxLength="250" Margin="20,5,20,0" Height="30"></TextBox>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource TextUsual}" Margin="20,0,0,0">Введите имя*</TextBlock>
+                        <TextBlock x:Name="NameMessage" Style="{StaticResource TextUsual}" Margin="50,0,0,0" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <TextBox x:Name="Name" Style="{StaticResource TextBoxUsial}" MaxLength="250" Margin="20,5,20,0" Height="30"></TextBox>
                 <TextBlock Style="{StaticResource TextUsual}" Margin="20,10,0,0">Введите фамилию</TextBlock>
                     <TextBox x:Name="Surname" Style="{StaticResource TextBoxUsial}" MaxLength="250" Margin="20,5,20,0" Height="30"></TextBox>
                     <TextBlock  Style="{StaticResource TextUsual}" Margin="20,10,0,0">Введите отчество</TextBlock>
@@ -27,11 +30,23 @@
                         <RadioButton x:Name="B2" Margin="30,5,0,0" FontSize="20" VerticalContentAlignment="Center" Foreground="#4d2b08">Женский</RadioButton>
                         <RadioButton x:Name="B3"  IsChecked="True" Margin="30,5,0,0" FontSize="20" VerticalContentAlignment="Center" Foreground="#4d2b08">Другой</RadioButton>
                 </StackPanel>
-                <TextBlock Style="{StaticResource TextUsual}" Margin="20,10,0,0">Придумайте логин*</TextBlock>
-                <TextBox x:Name="Login" Style="{StaticResource TextBoxUsial}" MaxLength="25" Margin="20,5,300,0" Height="30"></TextBox>
-                <TextBlock Style="{StaticResource TextUsual}" Margin="20,10,0,0">Придумайте пароль*</TextBlock>
-                <TextBox x:Name="Password" Style="{StaticResource TextBoxUsial}" MaxLength="50" Margin="20,5,300,0" Height="30"></TextBox>
-                <Button Click="Registration_Click" Style="{StaticResource ButtonUsial}" Margin="0,30,0,0" Width="400" Height="60">ЗАРЕГИСТРИРОВАТЬСЯ</Button>
+                
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Style="{StaticResource TextUsual}" Margin="20,10,0,0">Придумайте логин*</TextBlock>
+                            <TextBox x:Name="Login" Style="{StaticResource TextBoxUsial}" MaxLength="25" Margin="20,5,0,0" Height="30" Width="270"></TextBox>
+                        </StackPanel>
+                        <TextBlock x:Name="LoginMessage" Style="{StaticResource TextUsual}" Margin="10,10,0,0" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Style="{StaticResource TextUsual}" Margin="20,10,0,0">Придумайте пароль*</TextBlock>
+                            <TextBox x:Name="Password" Style="{StaticResource TextBoxUsial}" MaxLength="50" Margin="20,5,0,0" Height="30" Width="270"></TextBox>
+                        </StackPanel>
+                        <TextBlock x:Name="PasswordMessage" Style="{StaticResource TextUsual}" Margin="10,10,0,0" FontSize="18" VerticalAlignment="Top"></TextBlock>
+                    </StackPanel>
+                    <Button Click="Registration_Click" Style="{StaticResource ButtonUsial}" Margin="0,30,0,0" Width="400" Height="60">ЗАРЕГИСТРИРОВАТЬСЯ</Button>
                 <Button Click ="ToEnter_Click" Style="{StaticResource TextButton}" Margin ="30" HorizontalAlignment="Center">Уже есть аккаунт?</Button>
             </StackPanel>
         </Border>

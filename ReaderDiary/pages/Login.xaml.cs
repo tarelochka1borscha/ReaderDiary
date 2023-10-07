@@ -36,7 +36,7 @@ namespace ReaderDiary.pages
                             MessageBox.Show("Юзер");
                             break;
                         default:
-                            MessageBox.Show("Не найден");
+                            Message.Text = "Пользователь не найден.\nПроверьте вводимый логин.";
                             break;
                     }
                 }
@@ -44,6 +44,10 @@ namespace ReaderDiary.pages
                 {
                     Message.Text = "Неверный пароль.";
                 }
+            }
+            else
+            {
+                Message.Text = "Пользователь не найден.\nПроверьте вводимый логин.";
             }
         }
 
