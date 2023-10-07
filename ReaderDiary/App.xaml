@@ -9,10 +9,9 @@
             <Setter Property="Foreground" Value="#4d2b08"/>
             <Setter Property="FontSize" Value="24"/>
         </Style>
-        
-        
-        
-<Style x:Key="TextBoxUsial" TargetType="TextBox">
+
+
+        <Style x:Key="TextBoxUsial" TargetType="TextBox">
     <Setter Property="Background" Value="#f4cecb"/>
     <Setter Property="HorizontalContentAlignment" Value="Center"/>
     <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -98,10 +97,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
         <Style x:Key="DataGridColumnHeaderStyle1" TargetType="{x:Type DataGridColumnHeader}">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Padding" Value="21.5,0,21.5,0"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Template">
@@ -119,15 +119,12 @@
             </Setter>
         </Style>
 
-
-        <!--<Style TargetType="{x:Type DataGrid}">
-            <Setter Property="Background" Value="#e64d2b08"/>
+        <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="{x:Null}"/>
             <Setter Property="Foreground" Value="#e64d2b08"/>
-            <Setter Property="BorderBrush" Value="{x:Null}"/>
-            <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="FontSize" Value="18"/>
-        </Style>-->
-
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+        </Style>
 
 
 
