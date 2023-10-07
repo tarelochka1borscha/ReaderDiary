@@ -27,5 +27,17 @@ namespace ReaderDiary.pages
 
             Users.ItemsSource = Base.RDBase.UserData.ToList();
         }
+
+        private void Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Search.Text != string.Empty)
+            {
+                Users.ItemsSource = Base.RDBase.UserData.Where(x=> x.surname.ToLower().Contains(Search.Text.ToLower()) || x.Account.login.ToLower().Contains(Search.Text.ToLower())).ToList();
+            }
+            else
+            {
+                Users.ItemsSource = Base.RDBase.UserData.ToList();
+            }
+        }
     }
 }

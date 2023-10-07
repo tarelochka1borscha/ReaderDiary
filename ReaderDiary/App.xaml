@@ -15,14 +15,14 @@
     <Setter Property="Background" Value="#f4cecb"/>
     <Setter Property="HorizontalContentAlignment" Value="Center"/>
     <Setter Property="VerticalContentAlignment" Value="Center"/>
-    <Setter Property="FontSize" Value="20"/>
-    <Setter Property="Template">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Template">
         <Setter.Value>
             <ControlTemplate TargetType="TextBox">
                 <Border CornerRadius="10"
                         BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                    <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                </Border>
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
             </ControlTemplate>
         </Setter.Value>
     </Setter>

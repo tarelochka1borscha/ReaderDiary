@@ -10,18 +10,17 @@
 
     <Grid>
         <ScrollViewer>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Style="{StaticResource TextUsual}" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="25">Данные о пользователях</TextBlock>
-
-
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource TextUsual}" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="25" Margin="0,20,0,10">Данные о пользователях</TextBlock>
+                <TextBox x:Name="Search" Style="{StaticResource TextBoxUsial}" TextChanged="Search_TextChanged" FontSize="18" Foreground="#e64d2b08" Width="800" Margin="0,0,0,10" DataContext="Найти пользователя"/>
                 <ScrollViewer>
-                    <Border Width="865" Height="600" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border Width="865" Height="400" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2" HorizontalAlignment="Center">
                         <StackPanel>
                             <DataGrid ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Style="{DynamicResource DataGridStyle1}" x:Name="Users" AutoGenerateColumns="False" CanUserSortColumns="False" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Логин" Binding="{Binding Account.login}"/>
-                                    <DataGridTextColumn Header="Фамилия" Binding="{Binding name}"/>
-                                    <DataGridTextColumn Header="Имя" Binding="{Binding surname}"/>
+                                    <DataGridTextColumn Header="Фамилия" Binding="{Binding surname}"/>
+                                    <DataGridTextColumn Header="Имя" Binding="{Binding name}"/>
                                     <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic}"/>
                                     <DataGridTextColumn Header="Дата рождения" Binding="{Binding Account.birthday, StringFormat=dd.MM.yyyy}"/>
                                     <DataGridTextColumn Header="Пол" Binding="{Binding Account.Gender.title}"/>
