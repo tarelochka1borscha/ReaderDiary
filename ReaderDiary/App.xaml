@@ -101,7 +101,7 @@
         <Style x:Key="DataGridColumnHeaderStyle1" TargetType="{x:Type DataGridColumnHeader}">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Padding" Value="21.5,0,21.5,0"/>
+            <Setter Property="Padding" Value="10,0,10,0"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Template">

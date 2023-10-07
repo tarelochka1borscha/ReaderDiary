@@ -39,5 +39,25 @@ namespace ReaderDiary.pages
                 Users.ItemsSource = Base.RDBase.UserData.ToList();
             }
         }
+
+        private void Upp_Click(object sender, RoutedEventArgs e)
+        {
+            Users.ItemsSource = Base.RDBase.UserData.OrderBy(x=> x.surname).ToList();
+        }
+
+        private void Low_Click(object sender, RoutedEventArgs e)
+        {
+            Users.ItemsSource = Base.RDBase.UserData.OrderByDescending(x => x.surname).ToList();
+        }
+
+        private void Man_Click(object sender, RoutedEventArgs e)
+        {
+            Users.ItemsSource = Base.RDBase.UserData.Where(x => x.Account.id_gender==1).ToList();
+        }
+
+        private void Woman_Click(object sender, RoutedEventArgs e)
+        {
+            Users.ItemsSource = Base.RDBase.UserData.Where(x => x.Account.id_gender == 2).ToList();
+        }
     }
 }
