@@ -9,6 +9,32 @@
       Title="AllUsers">
 
     <Grid>
-        
+        <ScrollViewer>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Style="{StaticResource TextUsual}" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="25">Данные о пользователях</TextBlock>
+
+
+                <ScrollViewer>
+                    <Border Width="800" Height="600" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel>
+                            <ListView x:Name="ListUsers" Margin="10">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel>
+                                            <TextBlock Text="{Binding login}" Style="{StaticResource TextUsual}"/>
+                                            <TextBlock Text=" "/>
+                                            <TextBlock Text="{Binding name}" Style="{StaticResource TextUsual}"/>
+                                        </WrapPanel>
+                                        
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            
+
+                        </StackPanel>
+                    </Border>
+                </ScrollViewer>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
