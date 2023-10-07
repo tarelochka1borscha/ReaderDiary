@@ -17,19 +17,18 @@
                 <ScrollViewer>
                     <Border Width="800" Height="600" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel>
-                            <ListView x:Name="ListUsers" Margin="10">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <WrapPanel>
-                                            <TextBlock Text="{Binding login}" Style="{StaticResource TextUsual}"/>
-                                            <TextBlock Text=" "/>
-                                            <TextBlock Text="{Binding name}" Style="{StaticResource TextUsual}"/>
-                                        </WrapPanel>
-                                        
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                            
+                            <DataGrid x:Name="Users" Grid.Row="2" AutoGenerateColumns="False" CanUserSortColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Логин" Binding="{Binding Account.login}"/>
+                                    <DataGridTextColumn Header="Фамилия" Binding="{Binding name}"/>
+                                    <DataGridTextColumn Header="Имя" Binding="{Binding surname}"/>
+                                    <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic}"/>
+                                    <DataGridTextColumn Header="Дата рождения" Binding="{Binding Account.birthday, StringFormat=dd.MM.yyyy}"/>
+                                    <DataGridTextColumn Header="Пол" Binding="{Binding Account.Gender.title}"/>
+                                    <DataGridTextColumn Header="Роль" Binding="{Binding Account.UserRole.title}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
 
                         </StackPanel>
                     </Border>
