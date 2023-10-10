@@ -22,6 +22,7 @@
                                 <Button x:Name="LowSurname" Click="Low_Click" Style="{StaticResource ButtonUsial}" Width="40" Height="40" FontSize="24" Margin="10,5,10,0">↓</Button>
                                 <Button x:Name="Man" Click="Man_Click" Style="{StaticResource ButtonUsial}" Width="40" Height="40" FontSize="20" Margin="10,5,10,0">m</Button>
                                 <Button x:Name="Woman" Click="Woman_Click" Style="{StaticResource ButtonUsial}" Width="40" Height="40" FontSize="20" Margin="10,5,10,0">w</Button>
+                                <Button x:Name="Back" Click="Reset_Click" Style="{StaticResource ButtonUsial}" Width="40" Height="40" FontSize="24" Margin="10,5,10,0">⭯</Button>
                             </StackPanel>
                             <DataGrid ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Style="{DynamicResource DataGridStyle1}" x:Name="Users" AutoGenerateColumns="False" CanUserSortColumns="False" IsReadOnly="True" HorizontalAlignment="Center">
                                     <DataGrid.Columns>

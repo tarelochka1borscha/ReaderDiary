@@ -59,5 +59,10 @@ namespace ReaderDiary.pages
         {
             Users.ItemsSource = Base.RDBase.UserData.Where(x => x.Account.id_gender == 2).ToList();
         }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            Users.ItemsSource = Base.RDBase.UserData.ToList();
+        }
     }
 }

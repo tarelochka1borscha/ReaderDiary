@@ -33,7 +33,7 @@ namespace ReaderDiary.pages
                             NavigationService.Navigate(new Uri("pages/AdminMenu.xaml", UriKind.Relative));
                             break;
                         case 2:
-                            MessageBox.Show("Юзер");
+                            NavigationService.Navigate(new UserMainPage(user));
                             break;
                         default:
                             Message.Text = "Пользователь не найден.\nПроверьте вводимый логин.";
