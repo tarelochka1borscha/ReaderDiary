@@ -26,7 +26,7 @@ namespace ReaderDiary
         public int id_author { get; set; }
         public string description { get; set; }
         public Nullable<int> pages { get; set; }
-        public string photo { get; set; }
+        public byte[] photo { get; set; }
     
         public virtual Author Author { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

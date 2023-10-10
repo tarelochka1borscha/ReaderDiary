@@ -20,7 +20,7 @@ namespace ReaderDiary
         public Nullable<System.DateTime> first_date { get; set; }
         public Nullable<System.DateTime> last_date { get; set; }
         public Nullable<double> price { get; set; }
-        public string description { get; set; }
+        public byte[] description { get; set; }
         public int grade { get; set; }
     
         public virtual Account Account { get; set; }

@@ -1,6 +1,7 @@
 ﻿using ReaderDiary.classes;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,15 @@ namespace ReaderDiary.pages
             InitializeComponent();
             UserData current_user_data = Base.RDBase.UserData.Where(x=>x.id_user==current_user.id_user).FirstOrDefault();
             UserName.Text = current_user_data.name;
+            if (current_user_data.photo != null)
+            {
+                MemoryStream byteStream = new MemoryStream(current_user_data.photo);
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.StreamSource = byteStream;
+                image.EndInit();
+                ImageUser.Source = image;
+            }
         }
     }
 }

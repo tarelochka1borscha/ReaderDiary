@@ -19,6 +19,7 @@ namespace ReaderDiary
         public string name { get; set; }
         public string surname { get; set; }
         public string patronymic { get; set; }
+        public byte[] photo { get; set; }
     
         public virtual Account Account { get; set; }
     }

@@ -16,7 +16,7 @@ namespace ReaderDiary.pages
         public Login()
         {
             InitializeComponent();
-            Base.RDBase = new EntitiesRDiary();
+            Base.RDBase = new ReaderDiaryEntities();
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)

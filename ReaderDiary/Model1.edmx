@@ -63,7 +63,7 @@
           <Property Name="id_author" Type="int" Nullable="false" />
           <Property Name="description" Type="varchar" MaxLength="250" />
           <Property Name="pages" Type="int" />
-          <Property Name="photo" Type="varchar" MaxLength="255" />
+          <Property Name="photo" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -75,7 +75,7 @@
           <Property Name="first_date" Type="date" />
           <Property Name="last_date" Type="date" />
           <Property Name="price" Type="float" />
-          <Property Name="description" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="description" Type="varbinary(max)" Nullable="false" />
           <Property Name="grade" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -97,6 +97,7 @@
           <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="surname" Type="varchar" MaxLength="250" />
           <Property Name="patronymic" Type="varchar" MaxLength="250" />
+          <Property Name="photo" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
@@ -336,7 +337,7 @@
           <Property Name="id_author" Type="Int32" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="pages" Type="Int32" />
-          <Property Name="photo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Author" Relationship="Self.FK__Passport__id_aut__5FB337D6" FromRole="Passport" ToRole="Author" />
           <NavigationProperty Name="BookGenre" Relationship="Self.FK__BookGenre__id_pa__5EBF139D" FromRole="Passport" ToRole="BookGenre" />
           <NavigationProperty Name="Review" Relationship="Self.FK__Review__id_passp__60A75C0F" FromRole="Passport" ToRole="Review" />
@@ -351,7 +352,7 @@
           <Property Name="first_date" Type="DateTime" Precision="0" />
           <Property Name="last_date" Type="DateTime" Precision="0" />
           <Property Name="price" Type="Double" />
-          <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="grade" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK__Review__id_user__4D94879B" FromRole="Review" ToRole="Account" />
           <NavigationProperty Name="Passport" Relationship="Self.FK__Review__id_passp__60A75C0F" FromRole="Review" ToRole="Passport" />
@@ -375,6 +376,7 @@
           <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="surname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="patronymic" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK__UserData__id_use__628FA481" FromRole="UserData" ToRole="Account" />
         </EntityType>
         <EntityType Name="UserRole">
@@ -493,7 +495,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EntitiesRDiary" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ReaderDiaryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Account" EntityType="Self.Account" />
           <EntitySet Name="Author" EntityType="Self.Author" />
           <EntitySet Name="BookGenre" EntityType="Self.BookGenre" />
@@ -547,7 +549,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="EntitiesRDiary">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="ReaderDiaryEntities">
           <EntitySetMapping Name="Account">
             <EntityTypeMapping TypeName="Model.Account">
               <MappingFragment StoreEntitySet="Account">
@@ -648,6 +650,7 @@
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="surname" ColumnName="surname" />
                 <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

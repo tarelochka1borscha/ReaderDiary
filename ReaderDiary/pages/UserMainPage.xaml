@@ -7,21 +7,20 @@
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="900" Background="#fffbf2"
       Title="UserMainPage">
-
     <Grid>
-        <Border Width="200" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2" HorizontalAlignment="Left">
+        <Border Width="230" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2" HorizontalAlignment="Left">
             <StackPanel HorizontalAlignment="Center">
-                <!--фотка пользователя-->
+                <Image Name="ImageUser" Source="/Resources/default_image.png" RenderOptions.BitmapScalingMode="HighQuality" Width="140" Height="140" Margin="0,30,0,0"/>
                 <TextBlock Name="UserName" Style="{StaticResource TextUsual}" Margin="0,20,0,0" HorizontalAlignment="Center"/>
                 <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Мой профиль</Button>
                 <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Дневник</Button>
                 <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Читаю сейчас</Button>
                 <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Статистика</Button>
                 <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Книги</Button>
-                <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" Margin="0,200,0,0" FontSize="20">Выход</Button>
+                <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20">Выйти?</Button>
             </StackPanel>
         </Border>
-        <StackPanel HorizontalAlignment="Center" Margin="220,50,20,0">
+        <StackPanel HorizontalAlignment="Center" Margin="250,50,20,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Style="{StaticResource TextUsual}" FontSize="25" FontWeight="DemiBold" Margin="0,30,10,0">Добро пожаловать в Reader's Diary!</TextBlock>
                 <Image Source="/Resources/default_image.png" RenderOptions.BitmapScalingMode="HighQuality" Height="85" Width="68"/>
@@ -35,7 +34,7 @@
                 Проверьте, как часто Вы читаете, сколько времени уходит на прочтение одной книги, каким жанром интересуетесь чаще.
                 <LineBreak/>
                 <LineBreak/>
-                Помните: для хорошей книги всегда найдется время:)
+                Помните: для хорошей книги всегда найдется время :)
             </TextBlock>
         </StackPanel>
     </Grid>

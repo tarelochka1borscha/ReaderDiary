@@ -8,6 +8,6 @@ namespace ReaderDiary.classes
 {
     internal class Base
     {
-        public static EntitiesRDiary RDBase;
+        public static ReaderDiaryEntities RDBase;
     }
 }
