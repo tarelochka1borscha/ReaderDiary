@@ -22,9 +22,11 @@ namespace ReaderDiary.pages
     /// </summary>
     public partial class UserMainPage : Page
     {
-        public UserMainPage(Account current_user)
+        Account current_user;
+        public UserMainPage(Account user)
         {
             InitializeComponent();
+            current_user = user;
             UserData current_user_data = Base.RDBase.UserData.Where(x=>x.id_user==current_user.id_user).FirstOrDefault();
             UserName.Text = current_user_data.name;
             if (current_user_data.photo != null)
@@ -36,6 +38,11 @@ namespace ReaderDiary.pages
                 image.EndInit();
                 ImageUser.Source = image;
             }
+        }
+
+        private void ToMyProfile_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new UserProfile(current_user));
         }
     }
 }

@@ -113,8 +113,14 @@
     <Compile Include="pages\AllUsers.xaml.cs">
       <DependentUpon>AllUsers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\BookData.xaml.cs">
+      <DependentUpon>BookData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\UserMainPage.xaml.cs">
       <DependentUpon>UserMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\UserProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Passport.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -151,6 +157,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\BookData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\UserMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\UserProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

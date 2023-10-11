@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace ReaderDiary.pages
 {
     /// <summary>
-    /// Логика взаимодействия для AdminMenu.xaml
+    /// Логика взаимодействия для BookData.xaml
     /// </summary>
-    public partial class AdminMenu : Page
+    public partial class BookData : Page
     {
-        public AdminMenu()
+        public BookData()
         {
             InitializeComponent();
-        }
-
-        private void ToShowUsers_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("pages/AllUsers.xaml", UriKind.Relative));
-        }
-
-        private void ToShowBooks_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("pages/BookData.xaml", UriKind.Relative));
         }
     }
 }

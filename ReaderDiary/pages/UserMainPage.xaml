@@ -12,7 +12,7 @@
             <StackPanel HorizontalAlignment="Center">
                 <Image Name="ImageUser" Source="/Resources/default_image.png" RenderOptions.BitmapScalingMode="HighQuality" Width="140" Height="140" Margin="0,30,0,0"/>
                 <TextBlock Name="UserName" Style="{StaticResource TextUsual}" Margin="0,20,0,0" HorizontalAlignment="Center"/>
-                <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Мой профиль</Button>
+                <Button Click="ToMyProfile_Click" Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Мой профиль</Button>
                 <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Дневник</Button>
                 <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Читаю сейчас</Button>
                 <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Статистика</Button>
