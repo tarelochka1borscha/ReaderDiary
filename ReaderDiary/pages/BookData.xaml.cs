@@ -49,5 +49,22 @@ namespace ReaderDiary.pages
             }
             tb.Text = book_genres.Substring(0, book_genres.Length-2);
         }
+
+        private void Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Search.Text != string.Empty)
+            {
+                Books.ItemsSource = Base.RDBase.Passport.Where(x => x.title.ToLower().Contains(Search.Text.ToLower()) || x.Author.surname.ToLower().Contains(Search.Text.ToLower())).ToList();
+            }
+            else
+            {
+                Books.ItemsSource = Base.RDBase.Passport.ToList();
+            }
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddBook(1));
+        }
     }
 }

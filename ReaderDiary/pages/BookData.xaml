@@ -11,10 +11,14 @@
         <BitmapImage x:Key="defaultImage" UriSource="/Resources/default_image.png"></BitmapImage>
     </Page.Resources>
     <Grid>
+        <ScrollViewer>
         <StackPanel>
         <TextBlock Style="{StaticResource TextUsual}" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="25" Margin="0,20,0,10">Книги</TextBlock>
-
-            <ListView Name="Books" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#fffbf2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="Search" Style="{StaticResource TextBoxUsial}" TextChanged="Search_TextChanged" FontSize="18" Foreground="#e64d2b08" Width="600" Height="30" Margin="0,0,0,0" DataContext="Найти книгу" />
+                    <Button Style="{StaticResource ButtonUsial}" FontSize="20" Width="180" Height="40" Click="Add_Click" HorizontalAlignment="Center" Margin="10,0,0,0">Добавить</Button>
+                </StackPanel>
+                <ListView Name="Books" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#fffbf2">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel HorizontalAlignment="Center"></WrapPanel>
@@ -36,8 +40,8 @@
                                             </MultiBinding>
                                         </TextBlock.Text>
                                     </TextBlock>
-                                    <TextBlock Style ="{StaticResource TextUsual}"  Uid="{Binding id_passport}" Loaded="TextBlock_Loaded_Genre" TextWrapping="Wrap" FontSize="18" Margin="5,0,0,0"></TextBlock>
-                                    <TextBlock Style="{StaticResource TextUsual}" Text="{Binding description}" TextWrapping="Wrap" FontSize="18" Margin="5,10,0,0"></TextBlock>
+                                    <TextBlock Style ="{StaticResource TextUsual}"  Uid="{Binding id_passport}" Loaded="TextBlock_Loaded_Genre" TextWrapping="Wrap" FontSize="18" Margin="5,0,0,0" Height="40"></TextBlock>
+                                    <TextBlock Style="{StaticResource TextUsual}" Text="{Binding description}" TextWrapping="Wrap" FontSize="18" Margin="5,10,0,0" Height="200"></TextBlock>
                                     <TextBlock Style="{StaticResource TextUsual}" FontSize="18" Margin="5,5,0,0">
                                         <TextBlock.Text>
                                             <MultiBinding StringFormat="{}Количество страниц: {0}">
@@ -46,8 +50,8 @@
                                         </TextBlock.Text>
                                     </TextBlock>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Style="{StaticResource ButtonUsial}" Uid="{Binding id_passport}" FontSize="20" Width="180" Height="40" Click="Change_Click" HorizontalAlignment="Center"  Margin="5">Редактировать</Button>
-                                        <Button Style="{StaticResource ButtonUsial}" Uid="{Binding id_passport}" FontSize="20" Width="180" Height="40" Click="Delete_Click" HorizontalAlignment="Center" Margin="5">Удалить</Button>
+                                        <Button Style="{StaticResource ButtonUsial}" Uid="{Binding id_passport}" FontSize="20" Width="180" Height="40" Click="Change_Click" HorizontalAlignment="Center"  Margin="10">Редактировать</Button>
+                                        <Button Style="{StaticResource ButtonUsial}" Uid="{Binding id_passport}" FontSize="20" Width="180" Height="40" Click="Delete_Click" HorizontalAlignment="Center" Margin="10">Удалить</Button>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -56,5 +60,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
