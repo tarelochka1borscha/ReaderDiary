@@ -22,7 +22,7 @@
                         <TextBlock Style="{StaticResource TextUsual}" Margin="20,20,0,0">Выберите автора*</TextBlock>
                         <Button Click="Add_Author_Click" Style="{StaticResource TextButton}" FontSize="20" VerticalAlignment="Bottom" Margin="20,20,0,0">Добавить автора?</Button>
                     </StackPanel>
-                    <ComboBox Name="Author" Margin="20,5,20,0" Height="30" FontSize="24" Foreground="#4d2b08"></ComboBox>
+                    <ComboBox Name="Author" Margin="20,5,20,0" Height="30" FontSize="18" Foreground="#4d2b08"></ComboBox>
                     <TextBlock Style="{StaticResource TextUsual}" Margin="20,20,0,0">Выберите жанры</TextBlock>
                     <ListBox Name="Genres" SelectionMode="Multiple" Foreground="#4d2b08" FontSize="18" Margin="20,5,20,0"></ListBox>
                     <TextBlock Style="{StaticResource TextUsual}" Margin="20,20,0,0">Введите описание книги</TextBlock>
