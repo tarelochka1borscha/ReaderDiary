@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReaderDiary.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,30 @@ namespace ReaderDiary.pages
         public BookData()
         {
             InitializeComponent();
+            Books.ItemsSource = Base.RDBase.Passport.ToList();
+        }
+
+        private void Change_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBlock_Loaded_Genre(object sender, RoutedEventArgs e)
+        {
+            TextBlock tb = (TextBlock)sender;
+            int id = Convert.ToInt32(tb.Uid);
+            List<BookGenre> genres = Base.RDBase.BookGenre.Where(x=> x.id_passport == id).ToList();
+            string book_genres = "Жанры: ";
+            foreach(BookGenre genre in genres)
+            {
+                book_genres += genre.Genre.title + ", ";
+            }
+            tb.Text = book_genres.Substring(0, book_genres.Length-2);
         }
     }
 }

@@ -11,38 +11,50 @@
         <BitmapImage x:Key="defaultImage" UriSource="/Resources/default_image.png"></BitmapImage>
     </Page.Resources>
     <Grid>
-        <ListView Name="Books" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel HorizontalAlignment="Center"></WrapPanel>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border Padding="5" CornerRadius="5" BorderThickness="5" BorderBrush="#e64d2b08">
-                        <Grid Width="350" Height="350" Background="#e64d2b08">
-                            <StackPanel>
-                                <Image Source="{Binding photo, TargetNullValue={StaticResource defaultImage}}" Width="100" Height="200"/>
-                                <TextBlock Style="{StaticResource TextUsual}" Text="{Binding title}"></TextBlock>
-                                <TextBlock Style="{StaticResource TextUsual}">
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}Автор: {0} {1}">
-                                            <Binding Path="Author.name" />
-                                            <Binding Path="Author.surname" />
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                                <TextBlock Style="{StaticResource TextUsual}" Text="{Binding Author.Country.title}"></TextBlock>
-                                <TextBlock Style ="{StaticResource TextUsual}"  Uid="{Binding id_passport}" Loaded="TextBlock_Loaded_Genre" TextWrapping="Wrap"></TextBlock>
-                                <TextBlock Style="{StaticResource TextUsual}" Text="{Binding description}" TextWrapping="Wrap"></TextBlock>
-                                <TextBlock Style="{StaticResource TextUsual}" Text="{Binding pages}"></TextBlock>
-                                <Button Style="{StaticResource TextButton}" Uid="{Binding id_passport}" Click="Change_Click">Редактировать</Button>
-                                <Button Style="{StaticResource TextButton}" Uid="{Binding id_passport}" Click="Delete_Click">Удалить</Button>
-                            </StackPanel>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel>
+        <TextBlock Style="{StaticResource TextUsual}" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="25" Margin="0,20,0,10">Книги</TextBlock>
+
+            <ListView Name="Books" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#fffbf2">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Center"></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="7" BorderThickness="2" BorderBrush="#e64d2b08" Background="#fffbf2">
+                            <Grid Width="400" Background="#fff4de">
+                                <StackPanel>
+                                    <Image Source="{Binding photo, TargetNullValue={StaticResource defaultImage}}" Width="50" Height="100" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock Style="{StaticResource TextUsual}" Text="{Binding title}" FontSize="20" HorizontalAlignment="Center"></TextBlock>
+                                    <TextBlock Style="{StaticResource TextUsual}" FontSize="18" Margin="5,0,0,0">
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}Автор: {0} {1} ({2})">
+                                                <Binding Path="Author.name" />
+                                                <Binding Path="Author.surname" />
+                                                <Binding Path="Author.Country.title" />
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                    <TextBlock Style ="{StaticResource TextUsual}"  Uid="{Binding id_passport}" Loaded="TextBlock_Loaded_Genre" TextWrapping="Wrap" FontSize="18" Margin="5,0,0,0"></TextBlock>
+                                    <TextBlock Style="{StaticResource TextUsual}" Text="{Binding description}" TextWrapping="Wrap" FontSize="18" Margin="5,10,0,0"></TextBlock>
+                                    <TextBlock Style="{StaticResource TextUsual}" FontSize="18" Margin="5,0,0,0">
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}Количество страниц: {0}">
+                                                <Binding Path="pages" />
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button Style="{StaticResource ButtonUsial}" Uid="{Binding id_passport}" FontSize="20" Width="180" Height="40" Click="Change_Click" HorizontalAlignment="Center"  Margin="5">Редактировать</Button>
+                                        <Button Style="{StaticResource ButtonUsial}" Uid="{Binding id_passport}" FontSize="20" Width="180" Height="40" Click="Delete_Click" HorizontalAlignment="Center" Margin="5">Удалить</Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>
