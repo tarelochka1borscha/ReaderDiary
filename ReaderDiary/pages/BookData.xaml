@@ -23,11 +23,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border CornerRadius="7" BorderThickness="2" BorderBrush="#e64d2b08" Background="#fffbf2">
-                            <Grid Width="400" Background="#fff4de">
+                            <Grid Width="400" Height="500" Background="#fff4de">
                                 <StackPanel>
                                     <Image Source="{Binding photo, TargetNullValue={StaticResource defaultImage}}" Width="50" Height="100" RenderOptions.BitmapScalingMode="HighQuality"/>
                                     <TextBlock Style="{StaticResource TextUsual}" Text="{Binding title}" FontSize="20" HorizontalAlignment="Center"></TextBlock>
-                                    <TextBlock Style="{StaticResource TextUsual}" FontSize="18" Margin="5,0,0,0">
+                                    <TextBlock Style="{StaticResource TextUsual}" FontSize="18" Margin="5,10,0,0">
                                         <TextBlock.Text>
                                             <MultiBinding StringFormat="{}Автор: {0} {1} ({2})">
                                                 <Binding Path="Author.name" />
@@ -38,7 +38,7 @@
                                     </TextBlock>
                                     <TextBlock Style ="{StaticResource TextUsual}"  Uid="{Binding id_passport}" Loaded="TextBlock_Loaded_Genre" TextWrapping="Wrap" FontSize="18" Margin="5,0,0,0"></TextBlock>
                                     <TextBlock Style="{StaticResource TextUsual}" Text="{Binding description}" TextWrapping="Wrap" FontSize="18" Margin="5,10,0,0"></TextBlock>
-                                    <TextBlock Style="{StaticResource TextUsual}" FontSize="18" Margin="5,0,0,0">
+                                    <TextBlock Style="{StaticResource TextUsual}" FontSize="18" Margin="5,5,0,0">
                                         <TextBlock.Text>
                                             <MultiBinding StringFormat="{}Количество страниц: {0}">
                                                 <Binding Path="pages" />
