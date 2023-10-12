@@ -22,10 +22,12 @@ namespace ReaderDiary.windows
         public SomeMessage()
         {
             InitializeComponent();
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
         public SomeMessage(string text, string button)
         {
             InitializeComponent();
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             TextWindow.Text = text;
             TextButton.Content = button;
         }
