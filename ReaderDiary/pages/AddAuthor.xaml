@@ -15,12 +15,12 @@
                 <TextBlock Style="{StaticResource TextUsual}" FontWeight="DemiBold" Margin="0,30,0,15" HorizontalAlignment="Center" FontSize="35">ДОБАВЛЕНИЕ АВТОРА</TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Style="{StaticResource TextUsual}" Margin="20,0,0,0">Введите имя автора*</TextBlock>
-                        <TextBlock Name="NameMessage" Style="{StaticResource TextUsual}" Margin="50,0,0,0" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="NameMessage" Style="{StaticResource TextUsual}" Margin="10,0,0,0" FontSize="18" VerticalAlignment="Center"></TextBlock>
                     </StackPanel>
                     <TextBox x:Name="Name" Style="{StaticResource TextBoxUsial}" MaxLength="250" Margin="20,5,20,0" Height="30"></TextBox>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Style="{StaticResource TextUsual}" Margin="20,0,0,0">Введите фамилию автора*</TextBlock>
-                        <TextBlock Name="SurnameMessage" Style="{StaticResource TextUsual}" Margin="50,0,0,0" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Name="SurnameMessage" Style="{StaticResource TextUsual}" Margin="10,0,0,0" FontSize="18" VerticalAlignment="Center"></TextBlock>
                     </StackPanel>
                     <TextBox x:Name="Surname" Style="{StaticResource TextBoxUsial}" MaxLength="250" Margin="20,5,20,0" Height="30"></TextBox>
                     <TextBlock Style="{StaticResource TextUsual}" Margin="20,0,0,0">Выберите страну*</TextBlock>
