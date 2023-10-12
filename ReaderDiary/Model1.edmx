@@ -179,7 +179,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Review__id_passp__60A75C0F">
-          <End Role="Passport" Type="Self.Passport" Multiplicity="1" />
+          <End Role="Passport" Type="Self.Passport" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Passport">
@@ -484,7 +486,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Review__id_passp__60A75C0F">
-          <End Role="Passport" Type="Self.Passport" Multiplicity="1" />
+          <End Role="Passport" Type="Self.Passport" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Passport">
@@ -495,7 +499,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ReaderDiaryEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RDBase" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Account" EntityType="Self.Account" />
           <EntitySet Name="Author" EntityType="Self.Author" />
           <EntitySet Name="BookGenre" EntityType="Self.BookGenre" />
@@ -549,7 +553,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="ReaderDiaryEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="RDBase">
           <EntitySetMapping Name="Account">
             <EntityTypeMapping TypeName="Model.Account">
               <MappingFragment StoreEntitySet="Account">

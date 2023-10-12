@@ -1,4 +1,5 @@
 ﻿using ReaderDiary.classes;
+using ReaderDiary.windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,12 +30,30 @@ namespace ReaderDiary.pages
 
         private void Change_Click(object sender, RoutedEventArgs e)
         {
-
+            Button tb = (Button)sender; 
+            int index = Convert.ToInt32(tb.Uid);
+            NavigationService.Navigate(new AddBook(1, index));
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            Delete win = new Delete();
+            win.ShowDialog();
+            
+            if (win.YesOrNo())
+            {
+                Button tb = (Button)sender;
+                int index = Convert.ToInt32(tb.Uid);
+                Passport book = Base.RDBase.Passport.FirstOrDefault(x => x.id_passport == index);
+                List<BookGenre> genre = Base.RDBase.BookGenre.Where(x => x.id_passport == book.id_passport).ToList();
+                foreach (BookGenre bookGenre in genre)
+                {
+                    Base.RDBase.BookGenre.Remove(bookGenre);
+                }
+                Base.RDBase.Passport.Remove(book);
+                Base.RDBase.SaveChanges();
+                NavigationService.Navigate(new BookData());
+            }
         }
 
         private void TextBlock_Loaded_Genre(object sender, RoutedEventArgs e)

@@ -1,0 +1,20 @@
+﻿<Window x:Class="ReaderDiary.windows.Delete"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReaderDiary.windows"
+        mc:Ignorable="d"
+        Title="Удаление" Height="200" Width="500" Background="#fffbf2">
+    <Grid>
+        <Border Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Name="TextWindow" Style="{StaticResource TextUsual}" HorizontalAlignment="Center" TextWrapping="Wrap">Вы уверены, что хотите удалить?</TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                    <Button Click="Yes_Click" Style="{StaticResource ButtonUsial}" Width="200" Height="50" Margin="0,0,10,0">Да</Button>
+                    <Button Click="No_Click" Style="{StaticResource ButtonUsial}" Width="200" Height="50" Margin="10,0,0,0">Нет</Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
