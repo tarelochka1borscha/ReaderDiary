@@ -1,4 +1,5 @@
 ﻿using ReaderDiary.classes;
+using ReaderDiary.windows;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -45,7 +46,10 @@ namespace ReaderDiary.pages
                 };
                 Base.RDBase.UserData.Add(data);
                 Base.RDBase.SaveChanges();
-            }     
+                SomeMessage someMessage = new SomeMessage();
+                someMessage.ShowDialog();
+                NavigationService.Navigate(new Uri("pages/Login.xaml", UriKind.Relative));
+            }
         }
 
         private void ToEnter_Click(object sender, RoutedEventArgs e)
