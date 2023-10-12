@@ -1,9 +1,11 @@
 ﻿using Microsoft.Win32;
 using ReaderDiary.classes;
+using ReaderDiary.windows;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -86,7 +88,7 @@ namespace ReaderDiary.pages
 
                 Base.RDBase.SaveChanges();
             }
-            else
+            else if(role==1)
             {
                 Passport checking = Base.RDBase.Passport.FirstOrDefault(x => x.id_passport == new_book.id_passport);
                 if (checking != null)
@@ -119,19 +121,17 @@ namespace ReaderDiary.pages
 
                 Base.RDBase.SaveChanges();
             }
-            if (role == 1)
-            {
-                NavigationService.Navigate(new Uri("pages/BookData.xaml", UriKind.Relative));
-            }
             else
             {
-                //NavigationService.Navigate(new Uri("pages/AllUsers.xaml", UriKind.Relative));
+                SomeMessage someMessage = new SomeMessage("Вы не имеете права изменять данные :с", "Досадно");
+                someMessage.ShowDialog();
             }
+            NavigationService.GoBack();
         }
 
         private void Add_Author_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddAuthor());
         }
 
         private void Add_Photo_Click(object sender, RoutedEventArgs e)
@@ -144,13 +144,14 @@ namespace ReaderDiary.pages
             }
             catch
             {
-                MessageBox.Show("Фото не добавлено");
+                SomeMessage someMessage = new SomeMessage("Фото не добавлено", "Досадно");
+                someMessage.ShowDialog();
             }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.GoBack();
         }
     }
 }
