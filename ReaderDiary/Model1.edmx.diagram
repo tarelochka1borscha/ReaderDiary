@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="13aa0d872335435facb96468a1ba8ef5" Name="Diagram1">
+      <Diagram DiagramId="dd3b3a527f9f4d968615a4be9e8ba950" Name="Diagram1">
         <EntityTypeShape EntityType="Model.Account" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Author" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.BookGenre" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="Model.Gender" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Genre" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Passport" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Photos" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Review" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.UserData" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
@@ -25,6 +26,7 @@
         <AssociationConnector Association="Model.FK__BookGenre__id_ge__5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__BookGenre__id_pa__5EBF139D" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Review__id_passp__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Photos_UserData" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

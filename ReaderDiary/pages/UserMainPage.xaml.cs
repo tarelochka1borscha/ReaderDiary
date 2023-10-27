@@ -27,11 +27,20 @@ namespace ReaderDiary.pages
         {
             InitializeComponent();
             current_user = user;
-            UserData current_user_data = Base.RDBase.UserData.Where(x=>x.id_user==current_user.id_user).FirstOrDefault();
+            UserData current_user_data = Base.RDBase.UserData.Where(x => x.id_user == current_user.id_user).FirstOrDefault();
             UserName.Text = current_user_data.name;
-            if (current_user_data.photo != null)
+            Photos last_photo = null;
+            try
             {
-                MemoryStream byteStream = new MemoryStream(current_user_data.photo);
+                last_photo = Base.RDBase.Photos.Where(x => x.id_userdata == current_user_data.id_userdata).ToList().Last();
+            }
+            catch
+            {
+
+            }
+            if (last_photo != null)
+            {
+                MemoryStream byteStream = new MemoryStream(last_photo.data);
                 BitmapImage image = new BitmapImage();
                 image.BeginInit();
                 image.StreamSource = byteStream;

@@ -32,6 +32,7 @@ namespace ReaderDiary
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Genre> Genre { get; set; }
         public virtual DbSet<Passport> Passport { get; set; }
+        public virtual DbSet<Photos> Photos { get; set; }
         public virtual DbSet<Review> Review { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<UserData> UserData { get; set; }

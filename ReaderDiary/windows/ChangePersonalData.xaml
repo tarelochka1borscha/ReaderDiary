@@ -1,0 +1,37 @@
+﻿<Window x:Class="ReaderDiary.windows.ChangePersonalData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReaderDiary.windows"
+        mc:Ignorable="d"
+                Title="ChangePersonalData" Height="610" Width="600" Background="#fffbf2">
+    <Grid>
+        <Border Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2">
+            <StackPanel>
+                <TextBlock Style="{StaticResource TextUsual}" FontWeight="DemiBold" Margin="0,30,0,15" HorizontalAlignment="Center" FontSize="35">РЕДАКТИРОВАНИЕ</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource TextUsual}" Margin="20,0,0,0">Имя</TextBlock>
+                    <TextBlock x:Name="NameMessage" Style="{StaticResource TextUsual}" Margin="50,0,0,0" FontSize="18" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+                <TextBox x:Name="Name" Style="{StaticResource TextBoxUsial}" MaxLength="250" Margin="20,5,20,0" Height="30"></TextBox>
+                <TextBlock Style="{StaticResource TextUsual}" Margin="20,10,0,0">Фамилия</TextBlock>
+                <TextBox x:Name="Surname" Style="{StaticResource TextBoxUsial}" MaxLength="250" Margin="20,5,20,0" Height="30"></TextBox>
+                <TextBlock  Style="{StaticResource TextUsual}" Margin="20,10,0,0">Отчество</TextBlock>
+                <TextBox x:Name="Patronymic" Style="{StaticResource TextBoxUsial}" MaxLength="250" Margin="20,5,20,0" Height="30"></TextBox>
+                <TextBlock Style="{StaticResource TextUsual}" Margin="20,10,0,0">Дата рождения</TextBlock>
+                <DatePicker x:Name="DateBirth" Margin="20,5,20,0" FontSize="20" Foreground="#4d2b08" Background="#f4cecb"></DatePicker>
+                <TextBlock Style="{StaticResource TextUsual}" Margin="20,10,0,0">Ваш пол:</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="B1" Margin="20,5,0,0" FontSize="20" VerticalContentAlignment="Center" Foreground="#4d2b08">Мужской</RadioButton>
+                    <RadioButton x:Name="B2" Margin="30,5,0,0" FontSize="20" VerticalContentAlignment="Center" Foreground="#4d2b08">Женский</RadioButton>
+                    <RadioButton x:Name="B3" Margin="30,5,0,0" FontSize="20" VerticalContentAlignment="Center" Foreground="#4d2b08">Другой</RadioButton>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Click="Change_Click" Style="{StaticResource ButtonUsial}" Margin="0,30,0,0" Width="200" Height="60">Изменить</Button>
+                    <Button Click="Cancel_Click" Style="{StaticResource ButtonUsial}" Margin="30,30,0,0" Width="200" Height="60">Отмена</Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -12,22 +12,12 @@ namespace ReaderDiary
     using System;
     using System.Collections.Generic;
     
-    public partial class UserData
+    public partial class Photos
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UserData()
-        {
-            this.Photos = new HashSet<Photos>();
-        }
-    
+        public int id_photo { get; set; }
         public int id_userdata { get; set; }
-        public int id_user { get; set; }
-        public string name { get; set; }
-        public string surname { get; set; }
-        public string patronymic { get; set; }
+        public byte[] data { get; set; }
     
-        public virtual Account Account { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Photos> Photos { get; set; }
+        public virtual UserData UserData { get; set; }
     }
 }

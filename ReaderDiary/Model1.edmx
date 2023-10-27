@@ -65,6 +65,14 @@
           <Property Name="pages" Type="int" />
           <Property Name="photo" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Photos">
+          <Key>
+            <PropertyRef Name="id_photo" />
+          </Key>
+          <Property Name="id_photo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_userdata" Type="int" Nullable="false" />
+          <Property Name="data" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Review">
           <Key>
             <PropertyRef Name="id_review" />
@@ -97,7 +105,6 @@
           <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="surname" Type="varchar" MaxLength="250" />
           <Property Name="patronymic" Type="varchar" MaxLength="250" />
-          <Property Name="photo" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
@@ -193,7 +200,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Review__id_user__4D94879B">
-          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Account">
@@ -205,7 +214,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__UserData__id_use__628FA481">
-          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="UserData" Type="Self.UserData" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Account">
@@ -213,6 +224,20 @@
             </Principal>
             <Dependent Role="UserData">
               <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Photos_UserData">
+          <End Role="UserData" Type="Self.UserData" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Photos" Type="Self.Photos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserData">
+              <PropertyRef Name="id_userdata" />
+            </Principal>
+            <Dependent Role="Photos">
+              <PropertyRef Name="id_userdata" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -224,6 +249,7 @@
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Passport" EntityType="Self.Passport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photos" EntityType="Self.Photos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserData" EntityType="Self.UserData" Schema="dbo" store:Type="Tables" />
@@ -263,6 +289,10 @@
           <AssociationSet Name="FK__UserData__id_use__628FA481" Association="Self.FK__UserData__id_use__628FA481">
             <End Role="Account" EntitySet="Account" />
             <End Role="UserData" EntitySet="UserData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photos_UserData" Association="Self.FK_Photos_UserData">
+            <End Role="UserData" EntitySet="UserData" />
+            <End Role="Photos" EntitySet="Photos" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -344,6 +374,15 @@
           <NavigationProperty Name="BookGenre" Relationship="Self.FK__BookGenre__id_pa__5EBF139D" FromRole="Passport" ToRole="BookGenre" />
           <NavigationProperty Name="Review" Relationship="Self.FK__Review__id_passp__60A75C0F" FromRole="Passport" ToRole="Review" />
         </EntityType>
+        <EntityType Name="Photos">
+          <Key>
+            <PropertyRef Name="id_photo" />
+          </Key>
+          <Property Name="id_photo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_userdata" Type="Int32" Nullable="false" />
+          <Property Name="data" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="UserData" Relationship="Self.FK_Photos_UserData" FromRole="Photos" ToRole="UserData" />
+        </EntityType>
         <EntityType Name="Review">
           <Key>
             <PropertyRef Name="id_review" />
@@ -378,8 +417,8 @@
           <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="surname" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="patronymic" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK__UserData__id_use__628FA481" FromRole="UserData" ToRole="Account" />
+          <NavigationProperty Name="Photos" Relationship="Self.FK_Photos_UserData" FromRole="UserData" ToRole="Photos" />
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
@@ -414,7 +453,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Review__id_user__4D94879B">
-          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Account">
@@ -426,7 +467,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__UserData__id_use__628FA481">
-          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="UserData" Type="Self.UserData" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Account">
@@ -499,6 +542,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Photos_UserData">
+          <End Role="UserData" Type="Self.UserData" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Photos" Type="Self.Photos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserData">
+              <PropertyRef Name="id_userdata" />
+            </Principal>
+            <Dependent Role="Photos">
+              <PropertyRef Name="id_userdata" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="RDBase" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Account" EntityType="Self.Account" />
           <EntitySet Name="Author" EntityType="Self.Author" />
@@ -507,6 +564,7 @@
           <EntitySet Name="Gender" EntityType="Self.Gender" />
           <EntitySet Name="Genre" EntityType="Self.Genre" />
           <EntitySet Name="Passport" EntityType="Self.Passport" />
+          <EntitySet Name="Photos" EntityType="Self.Photos" />
           <EntitySet Name="Review" EntityType="Self.Review" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="UserData" EntityType="Self.UserData" />
@@ -546,6 +604,10 @@
           <AssociationSet Name="FK__Review__id_passp__60A75C0F" Association="Self.FK__Review__id_passp__60A75C0F">
             <End Role="Passport" EntitySet="Passport" />
             <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photos_UserData" Association="Self.FK_Photos_UserData">
+            <End Role="UserData" EntitySet="UserData" />
+            <End Role="Photos" EntitySet="Photos" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -621,6 +683,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Photos">
+            <EntityTypeMapping TypeName="Model.Photos">
+              <MappingFragment StoreEntitySet="Photos">
+                <ScalarProperty Name="id_photo" ColumnName="id_photo" />
+                <ScalarProperty Name="id_userdata" ColumnName="id_userdata" />
+                <ScalarProperty Name="data" ColumnName="data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Review">
             <EntityTypeMapping TypeName="Model.Review">
               <MappingFragment StoreEntitySet="Review">
@@ -654,7 +725,6 @@
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="surname" ColumnName="surname" />
                 <ScalarProperty Name="patronymic" ColumnName="patronymic" />
-                <ScalarProperty Name="photo" ColumnName="photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
