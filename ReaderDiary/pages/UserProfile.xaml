@@ -48,7 +48,7 @@
                 <TextBlock Name="Login" Style="{StaticResource TextUsual}" FontSize="20" Margin="10,0,0,20"/>
             </StackPanel>
             <Button Click="ChangeProfile_Click" Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" Margin="0,0,0,10" HorizontalAlignment="Left">Редактировать профиль</Button>
-            <Button Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" Margin="0,0,0,10" HorizontalAlignment="Left">Редактировать аккаунт</Button>
+            <Button Click="ChangeAccount_Click" Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" Margin="0,0,0,10" HorizontalAlignment="Left">Редактировать аккаунт</Button>
             <Button Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" Margin="0,0,0,10" HorizontalAlignment="Left">Обновить аватарку</Button>
             <Button Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left">Перейти в галерею</Button>
         </StackPanel>

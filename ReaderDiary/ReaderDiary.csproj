@@ -146,6 +146,9 @@
     <Compile Include="UserRole.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="windows\ChangeAccountData.xaml.cs">
+      <DependentUpon>ChangeAccountData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="windows\ChangePersonalData.xaml.cs">
       <DependentUpon>ChangePersonalData.xaml</DependentUpon>
     </Compile>
@@ -200,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\UserProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\ChangeAccountData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

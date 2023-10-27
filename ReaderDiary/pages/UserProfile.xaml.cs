@@ -43,5 +43,12 @@ namespace ReaderDiary.pages
             cpd.ShowDialog();
             NavigationService.Navigate(new UserProfile(current_user));
         }
+
+        private void ChangeAccount_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeAccountData cad = new ChangeAccountData(current_user);
+            cad.ShowDialog();
+            NavigationService.Navigate(new UserProfile(current_user));
+        }
     }
 }
