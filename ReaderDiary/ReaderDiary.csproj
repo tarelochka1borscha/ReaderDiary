@@ -122,6 +122,9 @@
     <Compile Include="pages\BookData.xaml.cs">
       <DependentUpon>BookData.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\Galery.xaml.cs">
+      <DependentUpon>Galery.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\UserMainPage.xaml.cs">
       <DependentUpon>UserMainPage.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\BookData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\Galery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

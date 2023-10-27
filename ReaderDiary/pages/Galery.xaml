@@ -1,0 +1,38 @@
+﻿<Page x:Class="ReaderDiary.pages.Galery"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ReaderDiary.pages"
+      mc:Ignorable="d" 
+                  d:DesignHeight="700" d:DesignWidth="900" Background="#fffbf2"
+      Title="Galery">
+
+    <Grid>
+        <Border Width="230" Background="#fff4de" CornerRadius="7" BorderBrush="#4d2b08" BorderThickness="2" HorizontalAlignment="Left">
+            <StackPanel HorizontalAlignment="Center">
+                <Image Name="ImageUser" Source="/Resources/default_image.png" RenderOptions.BitmapScalingMode="HighQuality" Width="140" Height="140" Margin="0,30,0,0"/>
+                <TextBlock Name="UserName" Style="{StaticResource TextUsual}" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+                <Button IsEnabled="False" Style="{StaticResource ButtonUsial}" Background="#e64d2b08" Foreground="#fffbf2" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Мой профиль</Button>
+                <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Дневник</Button>
+                <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Читаю сейчас</Button>
+                <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Статистика</Button>
+                <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0">Книги</Button>
+                <Button Style="{StaticResource ButtonUsial}" Height="50" Width="190" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20">Выйти?</Button>
+            </StackPanel>
+        </Border>
+        <StackPanel Name ="SPUser" Margin="250,20,20,20">
+            <TextBlock Style="{StaticResource TextUsual}" HorizontalAlignment="Center" FontSize="25" FontWeight="DemiBold" Margin="0,30,10,20" Text="Галерея"/>
+            <Button Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left" Margin="0,0,0,0">Добавить фотографии</Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="GaleryPanel">
+                <Button Click="Back_Click" x:Name="Back" Style="{StaticResource ButtonUsial}" FontSize="24" Width="40" Height="40" Margin="0,0,30,0">←</Button>
+                <Image Width="500" Height="450" Name="Photo" ></Image>
+                <Button Click="Forth_Click" x:Name="Forth" Style="{StaticResource ButtonUsial}" FontSize="24" Width="40" Height="40" Margin="30,0,0,0">→</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="ToAvatar" Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left" Margin="0,0,20,0">Поставить на аватарку</Button>
+                <Button Click ="Delete_Click" x:Name="Delete" Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left">Удалить фото</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

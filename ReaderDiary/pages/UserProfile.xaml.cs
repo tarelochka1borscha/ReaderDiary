@@ -101,5 +101,10 @@ namespace ReaderDiary.pages
                 someMessage.ShowDialog();
             }
         }
+
+        private void GoToGalery(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Galery(current_user));
+        }
     }
 }
