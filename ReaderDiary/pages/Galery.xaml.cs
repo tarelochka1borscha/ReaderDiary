@@ -94,24 +94,30 @@ namespace ReaderDiary.pages
 
         private void Forth_Click(object sender, RoutedEventArgs e)
         {
+            Back.IsEnabled = true;
             if (photos.Count == n + 1)
             {
-                n = -1;
+                n = 0;
             }
-            Back.IsEnabled = true;
-            n++;
+            else
+            {
+                n++;
+            }
             showPhoto();
             NavigationService.Refresh();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            Forth.IsEnabled = true;
             if (0 == n)
             {
-                n = photos.Count();
+                n = photos.Count()-1;
             }
-            Forth.IsEnabled = true;
-            n--;
+            else
+            {
+                n--;
+            }
             showPhoto();
             
             NavigationService.Refresh();
@@ -145,19 +151,26 @@ namespace ReaderDiary.pages
         private void AddPhotos_Click(object sender, RoutedEventArgs e)
         {
             UserData current_user_data = Base.RDBase.UserData.Where(x => x.id_user == current_user.id_user).FirstOrDefault();
+            Photos photo = Base.RDBase.Photos.Where(x => x.id_userdata == current_user_data.id_userdata).ToList().Last();
+            Base.RDBase.Photos.Remove(photo);
+            Base.RDBase.SaveChanges();
+
             OpenFileDialog image = new OpenFileDialog();
             image.Multiselect = true;
             if (image.ShowDialog() == true)
             {
                 foreach (string file in image.FileNames)
                 {
-                    Photos photo = new Photos();
-                    photo.id_userdata = current_user_data.id_userdata;
-                    photo.data = File.ReadAllBytes(file);
-                    Base.RDBase.Photos.Add(photo);
+                    Photos photo_ = new Photos();
+                    photo_.id_userdata = current_user_data.id_userdata;
+                    photo_.data = File.ReadAllBytes(file);
+                    Base.RDBase.Photos.Add(photo_);
 
                 }
+                Base.RDBase.Photos.Add(photo);
                 Base.RDBase.SaveChanges();
+                SomeMessage someMessage = new SomeMessage();
+                someMessage.ShowDialog();
                 NavigationService.Navigate(new Galery(current_user));
             }
         }
