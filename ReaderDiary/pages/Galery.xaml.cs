@@ -94,25 +94,26 @@ namespace ReaderDiary.pages
 
         private void Forth_Click(object sender, RoutedEventArgs e)
         {
+            if (photos.Count == n + 1)
+            {
+                n = -1;
+            }
             Back.IsEnabled = true;
             n++;
             showPhoto();
-            if (photos.Count == n + 1)
-            {
-                Forth.IsEnabled = false;
-            }
             NavigationService.Refresh();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            if (0 == n)
+            {
+                n = photos.Count();
+            }
             Forth.IsEnabled = true;
             n--;
             showPhoto();
-            if (0 == n)
-            {
-                Back.IsEnabled = false;
-            }
+            
             NavigationService.Refresh();
         }
 
