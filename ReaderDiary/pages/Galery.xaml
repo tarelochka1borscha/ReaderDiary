@@ -23,14 +23,14 @@
         </Border>
         <StackPanel Name ="SPUser" Margin="250,20,20,20">
             <TextBlock Style="{StaticResource TextUsual}" HorizontalAlignment="Center" FontSize="25" FontWeight="DemiBold" Margin="0,30,10,20" Text="Галерея"/>
-            <Button Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left" Margin="0,0,0,0">Добавить фотографии</Button>
+            <Button Click="AddPhotos_Click" Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left" Margin="0,0,0,0">Добавить фотографии</Button>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="GaleryPanel">
                 <Button Click="Back_Click" x:Name="Back" Style="{StaticResource ButtonUsial}" FontSize="24" Width="40" Height="40" Margin="0,0,30,0">←</Button>
-                <Image Width="500" Height="450" Name="Photo" ></Image>
+                <Image Width="400" Height="400" Name="Photo" ></Image>
                 <Button Click="Forth_Click" x:Name="Forth" Style="{StaticResource ButtonUsial}" FontSize="24" Width="40" Height="40" Margin="30,0,0,0">→</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-                <Button x:Name="ToAvatar" Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left" Margin="0,0,20,0">Поставить на аватарку</Button>
+                <Button Click ="ToAvatar_Click" x:Name="ToAvatar" Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left" Margin="0,0,20,0">Поставить на аватарку</Button>
                 <Button Click ="Delete_Click" x:Name="Delete" Style="{StaticResource ButtonUsial}" FontSize="20" Width="280" Height="40" HorizontalAlignment="Left">Удалить фото</Button>
             </StackPanel>
         </StackPanel>

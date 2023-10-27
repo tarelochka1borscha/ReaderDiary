@@ -1,4 +1,5 @@
-﻿using ReaderDiary.classes;
+﻿using Microsoft.Win32;
+using ReaderDiary.classes;
 using ReaderDiary.windows;
 using System;
 using System.Collections.Generic;
@@ -125,8 +126,37 @@ namespace ReaderDiary.pages
                 Base.RDBase.SaveChanges();
                 SomeMessage someMessage = new SomeMessage();
                 someMessage.ShowDialog();
-                photos.Remove(photos[n]);
-                n--;
+                NavigationService.Navigate(new Galery(current_user));
+            }
+        }
+
+        private void ToAvatar_Click(object sender, RoutedEventArgs e)
+        {
+            Base.RDBase.Photos.Remove(photos[n]);
+            Base.RDBase.SaveChanges();
+            Base.RDBase.Photos.Add(photos[n]);
+            Base.RDBase.SaveChanges();
+            SomeMessage someMessage = new SomeMessage();
+            someMessage.ShowDialog();
+            NavigationService.Navigate(new Galery(current_user));
+        }
+
+        private void AddPhotos_Click(object sender, RoutedEventArgs e)
+        {
+            UserData current_user_data = Base.RDBase.UserData.Where(x => x.id_user == current_user.id_user).FirstOrDefault();
+            OpenFileDialog image = new OpenFileDialog();
+            image.Multiselect = true;
+            if (image.ShowDialog() == true)
+            {
+                foreach (string file in image.FileNames)
+                {
+                    Photos photo = new Photos();
+                    photo.id_userdata = current_user_data.id_userdata;
+                    photo.data = File.ReadAllBytes(file);
+                    Base.RDBase.Photos.Add(photo);
+
+                }
+                Base.RDBase.SaveChanges();
                 NavigationService.Navigate(new Galery(current_user));
             }
         }
